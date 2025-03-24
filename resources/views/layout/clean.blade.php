@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/app.css" />
     <!-- <link rel="stylesheet" href="css/output.css" /> -->
   </head>
-  <body @isset($class_signup) class={{$class_signup}} @endisset>
+  <body @isset($Cssclass) class={{$Cssclass}} @endisset>
     @yield('childcontent')
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"
