@@ -100,7 +100,7 @@
 
    <main>
     <!-- Find a car form -->
-     <x-search-form/>
+     <x-search-form action='/search',method='GET'/>
     <!--/ Find a car form -->
 
     <!-- New Cars -->
