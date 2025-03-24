@@ -1,8 +1,6 @@
-@extends('layout.clean',['Cssclass'=>'page-signup'])
 
-@section('title', 'Signup')
-@section('childcontent')
-<main>
+<x-base-layout title="Signup" Cssclass="page-signup">
+  <main>
     <div class="container-small page-login">
       <div class="flex" style="gap: 5rem">
         <div class="auth-page-form">
@@ -63,7 +61,11 @@
   </main>
 
 
-@endsection
+</x-base-layout>
+
+
+
+
 
 
 

@@ -1,13 +1,11 @@
-@extends('layout.app')
 
-@section('title','Home')
-<x-card>
-  <x-slot:title>This is Header</x-slot:title>
-  Component 1
-  <x-slot:footer>This is a footer</x-slot:footer>
-
-</x-card>
-@section('content')
+<x-app-layout title="HomePage">
+  <x-card>
+    <x-slot:title>This is Header</x-slot:title>
+    Component 1
+    <x-slot:footer>This is a footer</x-slot:footer>
+  
+  </x-card>
    <!-- Home Slider -->
    <section class="hero-slider">
     <!-- Carousel wrapper -->
@@ -100,7 +98,7 @@
 
    <main>
     <!-- Find a car form -->
-     <x-search-form action='/search',method='GET'/>
+     <x-search-form action='/search' methode="POST"/>
     <!--/ Find a car form -->
 
     <!-- New Cars -->
@@ -668,11 +666,12 @@
     </section>
     <!--/ New Cars -->
   </main>
-  @section('footerLinks')
-  @parent
+ <x-slot:footerlink>
   <a href="#">Link 3</a>
   <a href="#">Link 4</a>
-   @endsection
+ </x-slot:footerlink>
+   
   
   
-  @endsection
+ 
+</x-app-layout>
