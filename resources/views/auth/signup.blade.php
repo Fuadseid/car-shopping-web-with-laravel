@@ -1,13 +1,10 @@
-
-<x-base-layout title="Signup" Cssclass="page-signup">
+<x-layouts.guest-layout title="Signup" Cssclass="page-signup">
   <main>
     <div class="container-small page-login">
       <div class="flex" style="gap: 5rem">
         <div class="auth-page-form">
           <div class="text-center">
-            <a href="/">
-              <img src="/img/logoipsum-265.svg" alt="" />
-            </a>
+          
           </div>
           <h1 class="auth-page-title">Signup</h1>
 
@@ -31,27 +28,14 @@
             <div class="form-group">
               <input type="text" placeholder="Phone" />
             </div>
-            <button class="btn btn-primary btn-login w-full">Register</button>
-
-            <div class="grid grid-cols-2 gap-1 social-auth-buttons">
-              <button
-                class="btn btn-default flex justify-center items-center gap-1"
-              >
-                <img src="/img/google.png" alt="" style="width: 20px" />
-                Google
-              </button>
-              <button
-                class="btn btn-default flex justify-center items-center gap-1"
-              >
-                <img src="/img/facebook.png" alt="" style="width: 20px" />
-                Facebook
-              </button>
-            </div>
-            <div class="login-text-dont-have-account">
-              Already have an account? -
-              <a href="/login.html"> Click here to login </a>
-            </div>
+           <x-slot:btn>Register</x-slot:btn>
+          
+           
           </form>
+ 
+
+          <x-slot:footerlink> Already have an account? -
+              <a href="/login.html"> Click here to login </a></x-slot:footerlink>
         </div>
         <div class="auth-page-image">
           <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
@@ -59,9 +43,14 @@
       </div>
     </div>
   </main>
+</x-layouts.guest-layout>
 
 
-</x-base-layout>
+
+
+
+
+
 
 
 
