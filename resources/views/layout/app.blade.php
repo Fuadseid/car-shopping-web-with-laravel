@@ -1,10 +1,8 @@
 @props(['title'=>'','footerlink'=>''])
 
 <x-base-layout title={{$title}}>
-  <x-layouts.header>
+  <x-layouts.header/>
 
-
-  </x-layouts.header>
   {{$slot}}
   <footer>
 
