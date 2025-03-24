@@ -1,6 +1,12 @@
 @extends('layout.app')
 
 @section('title','Home')
+<x-card>
+  <x-slot:title>This is Header</x-slot:title>
+  Component 1
+  <x-slot:footer>This is a footer</x-slot:footer>
+
+</x-card>
 @section('content')
    <!-- Home Slider -->
    <section class="hero-slider">
