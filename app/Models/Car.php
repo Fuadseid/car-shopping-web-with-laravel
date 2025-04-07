@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Car extends Model
@@ -30,4 +33,16 @@ class Car extends Model
 'deleted_at',
 
     ];
+    public function features():HasOne{
+        return $this->hasOne(CarFeature::class);
+    }
+    public function prmaryimage():HasOne{
+        return $this->hasOne(related: CarImage::class)->latestOfMany();
+    }
+    public function images():HasMany{
+        return $this->hasmany(CarImage::class);
+    }
+    public function cartype():BelongsTo{
+   return $this->belongsTo(CarType::class,'car_type_id');
+    }
 }
