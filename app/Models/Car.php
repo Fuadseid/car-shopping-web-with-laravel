@@ -32,17 +32,36 @@ class Car extends Model
 'updated_at',
 'deleted_at',
 
-    ];
-    public function features():HasOne{
-        return $this->hasOne(CarFeature::class);
-    }
-    public function prmaryimage():HasOne{
-        return $this->hasOne(related: CarImage::class)->latestOfMany();
-    }
-    public function images():HasMany{
-        return $this->hasmany(CarImage::class);
-    }
-    public function cartype():BelongsTo{
-   return $this->belongsTo(CarType::class,'car_type_id');
-    }
+];
+public function cartype():BelongsTo{
+return $this->belongsTo(CarType::class,'car_type_id');
+}
+public function favoriteuser():BelongsTo{
+    return $this->belongsTo(User::class,'user_id');
+}
+public function maker():BelongsTo{
+    return $this->belongsTo(Maker::class,'maker_id');
+}
+public function owner():BelongsTo{
+    return $this->belongsTo(User::class,'user_id');
+}
+public function model():BelongsTo{
+    return $this->belongsTo( Model::class,'mode_id');
+}
+public function fuelType():BelongsTo{
+    return $this->belongsTo(FuelType::class,'fuel_type_id');
+}
+public function city():BelongsTo{
+    return $this->belongsTo( City::class,'city_id');
+}
+public function features():HasOne{
+    return $this->hasOne(CarFeature::class);
+}
+public function prmaryimage():HasOne{
+    return $this->hasOne( CarImage::class)->latestOfMany();
+}
+public function images():HasMany{
+    return $this->hasmany(CarImage::class);
+}
+
 }

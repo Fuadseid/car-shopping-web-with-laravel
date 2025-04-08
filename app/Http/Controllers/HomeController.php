@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\User;
+
 use App\Models\CarFeature;
 use App\Models\CarType;
 use App\Models\FuelType;
@@ -49,8 +51,8 @@ class HomeController extends Controller
  */
 /*    $car = Car::where('year','<',2010)->delete();
  */
-   $car = Car::find(1);
-
+/*    $car = Car::find(1);
+ */
   // dd($car->features, $car->prmaryimage);
 /*   $carfeature = new CarFeature([
     "abs"=>false,
@@ -82,8 +84,8 @@ class HomeController extends Controller
 
  dd($car->images()->get()); */
 
-$cartype = CarType::where('id',operator: 3)->first();
-
+/* $cartype = CarType::where(column: 'id',operator: 3)->first();
+ */
 
 
 /* dd($car->whereBelongsTo($cartype)->get());
@@ -95,9 +97,19 @@ $cartype = CarType::where('id',operator: 3)->first();
 /*  $car->cartype()->associate($cartype);
  */
 
-$car->car_type_id = $cartype->id;
+/* $car->car_type_id = $cartype->id;
+ */
+/*  $car->save();
+ */ 
+$user= User::find(1);
 
- $car->save();
+/* $user->favoritecar()->attach([1,2]);
+ */
+
+/* $user->favoritecar()->sync([1,2,3,4]);
+ */
+$user->favoritecar()->detach();
+
  return view(view: 'home.index');
 
 
