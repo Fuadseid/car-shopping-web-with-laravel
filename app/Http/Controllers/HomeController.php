@@ -11,6 +11,9 @@ use App\Models\FuelType;
 use App\Models\Maker;
 use Illuminate\Http\Request;
 use App\Models\CarImage;
+use App\Models\Model;
+use GuzzleHttp\Promise\Create;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 
 class HomeController extends Controller
 {
@@ -101,14 +104,30 @@ class HomeController extends Controller
  */
 /*  $car->save();
  */ 
-$user= User::find(1);
-
+/* $user= User::find(1);
+ */
 /* $user->favoritecar()->attach([1,2]);
  */
 
 /* $user->favoritecar()->sync([1,2,3,4]);
  */
-$user->favoritecar()->detach();
+/* $user->favoritecar()->detach();
+ */
+
+/*   $maker = Maker::factory()->count(10)->Make(
+    ["name"=>"Ford"]
+  );
+  $user = User::factory()->count(count: 8)->create();
+dd($maker,$user); */
+
+//$user = User::factory()->count(count: 5)->sequence(fn (Sequence $sequence) =>["name"=>"User".$sequence->count])->make();
+
+
+Maker::factory()
+    ->count(1)
+    ->has(Model::factory()->count(3))
+    ->create();
+
 
  return view(view: 'home.index');
 

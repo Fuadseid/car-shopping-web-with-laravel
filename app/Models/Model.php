@@ -19,4 +19,5 @@ class Model extends ElequentModel
     public function maker():BelongsTo{
         return $this->belongsTo(Maker::class);
     }
+
 }
