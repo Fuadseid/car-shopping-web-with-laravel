@@ -123,10 +123,13 @@ dd($maker,$user); */
 //$user = User::factory()->count(count: 5)->sequence(fn (Sequence $sequence) =>["name"=>"User".$sequence->count])->make();
 
 
-Maker::factory()
+/* Maker::factory()
     ->count(1)
     ->has(Model::factory()->count(3))
-    ->create();
+    ->create(); */
+
+
+User::factory()->has(Car::factory()->count(5),relationship: 'favoritecar')->create();
 
 
  return view(view: 'home.index');
